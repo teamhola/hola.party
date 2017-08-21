@@ -1,0 +1,82 @@
+.card {
+    display: flex;
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    box-sizing: inherit;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 0 3px #ccc inset;
+    box-shadow: 0 0 0 3px #ccc inset;
+}
+.card .card-image {
+    max-width: 50%;
+    position: relative;
+    box-sizing: inherit;
+    -webkit-box-shadow: 0 0 0 3px #ccc inset;
+    box-shadow: 0 0 0 3px #ccc inset;
+}
+.card img {
+    max-width: 100%;
+    width: auto;
+    display: block;
+    margin: 3px;
+}
+.card .card-stacked {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    box-sizing: inherit;
+    line-height: 1.5;
+}
+.card .card-content {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    box-sizing: inherit;
+}
+.card p {
+    margin: 0;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+.card .card-action {
+    position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
+    border-radius: 0 0 2px 2px;
+}
+.card a {
+    color: #3498db;
+    margin-right: 24px;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+}
+[class^="catg-"] {
+    padding: 5px;
+    background: #3498db;
+    margin: 5px;
+    border-radius: 2px;
+    color: white;
+}
+.catg-2 {
+    background: #ff9800;
+}
