@@ -24,7 +24,7 @@ $domain = array(
 				'MYSQL_PORT' => '3306',
 				'MYSQL_USER' => 'root',
 				'MYSQL_DB'   => 'hola',
-				'MYSQL_PASS' => 'Zsgscorp1',
+				'MYSQL_PASS' => 'lalala',
 				'MYSQL_CHARSET' => 'utf8',
 
 		),
@@ -33,11 +33,24 @@ $domain = array(
 		'debug' => 1,
 		'mysql' => array(
 
-				'MYSQL_HOST' => 'localhost',
-				'MYSQL_PORT' => '3306',
-				'MYSQL_USER' => 'root',
-				'MYSQL_DB'   => 'hola',
-				'MYSQL_PASS' => '',
+				'MYSQL_HOST' => getenv('MYSQL_HOST'),
+				'MYSQL_PORT' => getenv('MYSQL_PORT'),
+				'MYSQL_USER' => getenv('MYSQL_USER'),
+				'MYSQL_DB'   => getenv('MYSQL_DATABASE'),
+				'MYSQL_PASS' => getenv('MYSQL_PASSWORD'),
+				'MYSQL_CHARSET' => 'utf8',
+
+		),
+	),
+	"www.hola.party" => array( // 调试配置
+		'debug' => 1,
+		'mysql' => array(
+
+				'MYSQL_HOST' => getenv('MYSQL_HOST'),
+				'MYSQL_PORT' => getenv('MYSQL_PORT'),
+				'MYSQL_USER' => getenv('MYSQL_USER'),
+				'MYSQL_DB'   => getenv('MYSQL_DATABASE'),
+				'MYSQL_PASS' => getenv('MYSQL_PASSWORD'),
 				'MYSQL_CHARSET' => 'utf8',
 
 		),
