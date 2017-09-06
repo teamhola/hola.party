@@ -2,6 +2,7 @@
     <div class="outer">
         <section id="main">
             <{foreach $records as $r}> 
+            <iframe src="https://www.bilibili.com/html/html5player.html?aid=<{$r.bilibili}>&as_wide=1" frameborder="0" width="640" height="430" allowfullscreen></iframe>
             <article id="talk-<{$r.id}>" class="article article-type-talk" itemscope="" itemprop="blogPost">
                 <div class="article-inner">
                     <header class="article-header">

@@ -1,0 +1,23 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Speakers - Add</a>
+                </h1>
+            </header>
+            <form action="<{url c="admin/speakers" a="add"}>" method=POST>
+                <p>Name: <input type="text" name="name" size=50 required></p>
+                <p>Password: <input type="password" name="password" size=50 required></p>
+                <p>Full_name: <input type="text" name="full_name" size=50 required></p>
+                <p>
+                    Group: 
+                    <select name="group" required>
+                        <option value ="1" selected>讲者</option>
+                    </select>
+                </p>
+                <p><input type=submit value=" 新建 "></p>
+            </form> 
+        </div>
+    </article>
+</section>

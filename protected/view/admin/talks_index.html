@@ -1,0 +1,33 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Talks</a>
+                </h1>
+            </header>
+            <table border="1">
+                <tr>
+                    <td>编号</td>
+                    <td>标题</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <{foreach $records as $r}>   
+                    <tr>
+                        <td><{$r.id}></td>
+                        <td><{$r.title}></td>
+                        <{if $r.visibility}>
+                            <td style="color:red;">草稿
+                        <{else}>
+                            <td style="color:green;">发布
+                        <{/if}>
+                        </td>
+                        <td><a href="/admin/talks_edit_<{$r.id}>.html">编辑</a></td>
+                    </tr>       
+                <{/foreach}>
+            </table>
+            <a href="/admin/talks_add.html">Add</a>
+        </div>
+    </article>
+</section>

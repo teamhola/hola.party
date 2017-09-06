@@ -1,0 +1,28 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Speakers</a>
+                </h1>
+            </header>
+            <table border="1">
+                <tr>
+                    <td>UID</td>
+                    <td>用户名</td>
+                    <td>真实姓名</td>
+                    <td>操作</td>
+                </tr>
+                <{foreach $records as $r}>   
+                    <tr>
+                        <td><{$r.uid}></td>
+                        <td><{$r.name}></td>
+                        <td><{$r.full_name}></td>
+                        <td><a href="/admin/speakers_edit_<{$r.uid}>.html">编辑</a></td>
+                    </tr>       
+                <{/foreach}>
+            </table>
+            <a href="/admin/speakers_add.html">Add</a>
+        </div>
+    </article>
+</section>

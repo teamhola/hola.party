@@ -1,0 +1,26 @@
+.hola-card-stack.holap-col {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.hola-card.holap-col-item {
+  display:inline-block;
+  width: 15rem;
+  padding: 1rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hola-card.hola-card-with-image.holap-col-item .hola-image:first-child {
+  margin: -1rem -1rem 1rem -1rem;
+  background: #555;
+  width: calc(100% + 2rem);
+  height: 11.25rem; /* 15rem / 4 * 3 */
+}
+
+.hola-card.holap-col-item .hola-card-title {
+  margin-bottom: .5rem;
+}
+.hola-card.holap-col-item * {
+	color: #333
+}

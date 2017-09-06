@@ -1,0 +1,56 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Talks - Edit</a>
+                </h1>
+            </header>
+            <form action="<{url c="admin/talks" a="edit"}>" method=POST>
+                <input type="hidden" name="id" value="<{$records[0].id}>" size=50>
+                <p>Title: <input type="text" name="title" value="<{$records[0].title}>" size=50 required></p>
+                <p>Image: <input type="text" name="img" value="<{$records[0].img}>" size=50 required></p>
+                <p>Speaker UID: <input type="number" name="uid" value="<{$records[0].uid}>" size=50 required></p>
+                <p>
+                    Event: 
+                    <select name="eid" required>
+                        <{foreach $events as $e}> 
+                        <option value ="<{$e.eid}>" <{if $e.eid == $records[0].uid}>selected<{/if}> ><{$e.name}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Catg: 
+                    <select name="cid" required>
+                        <{foreach $catg as $c}> 
+                        <option value ="<{$c.cid}>" <{if $c.cid == $records[0].cid}>selected<{/if}> ><{$c.title}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Protocol: 
+                    <select name="pid" required>
+                        <{foreach $protocol as $p}> 
+                        <option value ="<{$p.pid}>" <{if $p.pid == $records[0].pid}>selected<{/if}> ><{$p.name}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Visibility: 
+                    <select name="visibility" required>
+                        <option value ="0" <{if $records[0].visibility==0}>selected<{/if}> >已发布</option>
+                        <option value ="1" <{if $records[0].visibility==1}>selected<{/if}> >草稿（讲者可见）</option>
+                        <option value ="2" <{if $records[0].visibility==2}>selected<{/if}> >草稿（ADMIN ONLY）</option>
+                    </select>
+                </p>
+                <p>Video Link</p>
+                <p>Tencent Code: <input type="text" name="tencent" value="<{$records[0].tencent}>" size=50></p>
+                <p>Youtube Code: <input type="text" name="youtube" value="<{$records[0].youtube}>" size=50></p>
+                <p>Bilibili Code: <input type="text" name="bilibili" value="<{$records[0].bilibili}>" size=50></p>
+                <p>Description</p>
+                <textarea name="desc" style="width:50%;height:50vh;" required><{$records[0].desc}></textarea>
+                <p><input type=submit value=" 修改 "></p>
+            </form> 
+        </div>
+    </article>
+</section>

@@ -1,0 +1,23 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Speakers - Edit</a>
+                </h1>
+            </header>
+            <form action="<{url c="admin/speakers" a="edit"}>" method=POST>
+                <input type="hidden" name="uid" value="<{$records[0].uid}>" size=50 required>
+                <p>Name: <input type="text" name="name" value="<{$records[0].name}>" size=50 required></p>
+                <p>Full_name: <input type="text" name="full_name" value="<{$records[0].full_name}>" size=50 required></p>
+                <p>
+                    Group: 
+                    <select name="group" required>
+                        <option value ="1" selected >讲者</option>
+                    </select>
+                </p>
+                <p><input type=submit value=" 修改 "></p>
+            </form> 
+        </div>
+    </article>
+</section>

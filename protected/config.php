@@ -6,9 +6,11 @@ date_default_timezone_set('PRC');
 $config = array(
 	'rewrite' => array(
 		'admin/index.html' => 'admin/main/index',
+		'admin/<c>_edit_<id>.html'    => 'admin/<c>/edit', 
 		'admin/<c>_<a>.html'    => 'admin/<c>/<a>', 
         '<m>/<c>/<a>'          => '<m>/<c>/<a>',
 		'<c>/<a>'          => '<c>/<a>',
+		'wp-admin'          => 'egg/index',
 		'talk-list'                => 'main/index',
 		'<a>-<id>'                => 'main/<a>',
 		'<redirct>'                => 'main/jump',
@@ -16,6 +18,19 @@ $config = array(
 );
 
 $domain = array(
+    "test.1cf.co" => array( // 调试配置
+		'debug' => 1,
+		'mysql' => array(
+
+				'MYSQL_HOST' => 'localhost',
+				'MYSQL_PORT' => '3306',
+				'MYSQL_USER' => 'root',
+				'MYSQL_DB'   => 'hola',
+				'MYSQL_PASS' => 'Zsgscorp1',
+				'MYSQL_CHARSET' => 'utf8',
+
+		),
+	),
 	"hola.party" => array( // 调试配置
 		'debug' => 1,
 		'mysql' => array(

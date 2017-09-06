@@ -1,0 +1,55 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Talks - Add</a>
+                </h1>
+            </header>
+            <form action="<{url c="admin/talks" a="add"}>" method=POST>
+                <p>Title: <input type="text" name="title" size=50 required></p>
+                <p>Image: <input type="text" name="img" size=50 required></p>
+                <p>Speaker UID: <input type="number" name="uid" size=50 required></p>
+                <p>
+                    Event: 
+                    <select name="eid" required>
+                        <{foreach $events as $e}> 
+                        <option value ="<{$e.eid}>"><{$e.name}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Catg: 
+                    <select name="cid" required>
+                        <{foreach $catg as $c}> 
+                        <option value ="<{$c.cid}>"><{$c.title}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Protocol: 
+                    <select name="pid" required>
+                        <{foreach $protocol as $p}> 
+                        <option value ="<{$p.pid}>"><{$p.name}></option>
+                        <{/foreach}>
+                    </select>
+                </p>
+                <p>
+                    Visibility: 
+                    <select name="visibility" required>
+                        <option value ="0">已发布</option>
+                        <option value ="1">草稿（讲者可见）</option>
+                        <option value ="2">草稿（ADMIN ONLY）</option>
+                    </select>
+                </p>
+                <p>Video Link</p>
+                <p>Tencent Code: <input type="text" name="tencent" size=50></p>
+                <p>Youtube Code: <input type="text" name="youtube" size=50></p>
+                <p>Bilibili Code: <input type="text" name="bilibili" size=50></p>
+                <p>Description</p>
+                <textarea name="desc" style="width:50%;height:50vh;" required></textarea>
+                <p><input type=submit value=" 新建 "></p>
+            </form> 
+        </div>
+    </article>
+</section>

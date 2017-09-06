@@ -1,0 +1,25 @@
+<section id="main">
+    <article id="post-holaxluogu" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <div class="article-inner hola-card">
+            <header class="hola-card-title">
+                <h1 itemprop="name">
+                    <a class="article-title">Categories</a>
+                </h1>
+            </header>
+            <table border="1">
+                <tr>
+                    <td>编号</td>
+                    <td>名称</td>
+                    <td>操作</td>
+                </tr>
+                <{foreach $records as $r}>   
+                    <tr>
+                        <td><{$r.cid}></td>
+                        <td><{$r.title}></td>
+                        <td>无</td>
+                    </tr>       
+                <{/foreach}>
+            </table>
+        </div>
+    </article>
+</section>
