@@ -22,5 +22,33 @@
   margin-bottom: .5rem;
 }
 .hola-card.holap-col-item * {
-	color: #333
+	color: #333;
+}
+
+[videoplay] * {
+  display: none;
+  height: 600px;
+}
+
+[videoplay].active * {
+  display: block;
+}
+
+.video-switcher a {
+  text-decoration: none;
+}
+
+.video-switcher a.active {
+  font-weight: bold;
+}
+
+[class^="catg-"] {
+    padding: 5px;
+    background: #3498db;
+    margin: 5px;
+    border-radius: 2px;
+    color: white;
+}
+.catg-2 {
+    background: #ff9800;
 }

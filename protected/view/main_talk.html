@@ -1,102 +1,60 @@
-
-    <div class="outer">
-        <section id="main">
-            <{foreach $records as $r}> 
-            <iframe src="https://www.bilibili.com/html/html5player.html?aid=<{$r.bilibili}>&as_wide=1" frameborder="0" width="640" height="430" allowfullscreen></iframe>
-            <article id="talk-<{$r.id}>" class="article article-type-talk" itemscope="" itemprop="blogPost">
-                <div class="article-inner">
-                    <header class="article-header">
-                        <h1 class="article-title" itemprop="name">
-                            <span class="catg-<{$r.cid}>"><{$catg[0]["title"]}></span><{$r.title}>
-                        </h1>
-                    </header>
-                    <div class="article-entry" itemprop="articleBody">
-                        <div class="video-player" style="margin-top:2em">
-                            <div videoplay="" id="videoplay-bilibili" class="active">
-                                <{if $r.bilibili}>
-                                <embed quality="high" allowfullscreen="" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=<{$r.bilibili}>&amp;page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></div>
-                                <{/if}>
-                                <{if $r.youtube}>
-                                <div videoplay="" id="videoplay-youtube">
-                                    <iframe src="https://www.youtube.com/embed/<{$r.youtube}>" frameborder="0" allowfullscreen="">
-                                        &lt;p&gt;在某些网络环境下，您可能无法使用 YouTube 视频源。&lt;/p&gt;
-                                    </iframe>
-                                </div>
-                                <{/if}>
-                        </div>
-                        <div class="video-switcher">
-                            <h5>视频源</h5>
-                            <{if $r.bilibili}>
-                            <a href="#bilibili" id="videosrc-bilibili" class="active">哔哩哔哩</a>
-                            <{/if}>
-                            <{if $r.youtube}>
-                            <a href="#youtube" id="videosrc-youtube" class="videosrc">YouTube</a>
-                            <{/if}>
-                        </div>
-                        <p>本视频录制于 <a href="https://ihola.one/events/<{$events[0]["link"]}>.html"><{$events[0]["name"]}></a>，讲者 <{$users[0]["full_name"]}>。</p>
-                        <p><{$r.desc}></p>
-                        <p>所有 <a href="https://ihola.one/events/<{$events[0]["link"]}>.html"><{$events[0]["name"]}></a> 活动视频均以 <a href="<{$protocol[0]["link"]}>"><{$protocol[0]["name"]}></a> 协议发布。请遵守协议，转载请注明出处，请勿用于商业用途。</p>
-                    </div>
-                    <footer class="article-footer">
-                        <a data-url="https://ihola.one/talks/test.html" data-id="cj69gbfqk000cdm0uz3ye6lyf" class="article-share-link">Share</a>
-                    </footer>
-                </div>
-            </article>
-            <{/foreach}>
-            <script>
-                if (!location.hash) location.hash = <{if $r.bilibili}>'#bilibili'<{else if $r.youtube}>'#youtube'<{/if}>
-
-                window._prevId = location.hash.slice(1)
-            
-                const handler = e => {
-                    !e || e.preventDefault()
-                    document.getElementById('videosrc-' + window._prevId).setAttribute('class', '')
-                    document.getElementById('videosrc-' + location.hash.slice(1)).setAttribute('class', 'active')
-                    document.getElementById('videoplay-' + window._prevId).setAttribute('class', '')
-                    document.getElementById('videoplay-' + location.hash.slice(1)).setAttribute('class', 'active')
-                    window._prevId = location.hash.slice(1)
-                    return false
-                }
-            
-                window.addEventListener('hashchange', handler)
-            
-                handler()
-            </script>
-        </section>
-        <aside id="sidebar">
-            <div class="widget-wrap">
-                <h3 class="widget-title">最新文章</h3>
-                <div class="widget">
-                    <ul>
-                        <li>
-                            <a href="https://ihola.one/2017/08/holaxluogu/">¡Hola! x 洛谷</a>
-                        </li>
-                        <li>
-                            <a href="https://ihola.one/2017/08/conf17-souvenirs/">¡Hola! Conf 2017 纪念品发售</a>
-                        </li>
-                        <li>
-                            <a href="https://ihola.one/2017/07/holaconf17-speaker/">¡Hola! Conf 2017 讲者</a>
-                        </li>
-                        <li>
-                            <a href="https://ihola.one/2017/06/the-concept-video/">¡Hola! 概念宣传片发布</a>
-                        </li>
-                        <li>
-                            <a href="https://ihola.one/2017/06/call-for-volunteer/">志愿者招募</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="widget-wrap">
-                <h3 class="widget-title">合作伙伴 &amp; 赞助商</h3>
-                <div class="widget">
-                    <ul>
-                        <li>
-                            <a href="https://www.luogu.org?utm_source=ihola">
-                                <img src="https://ihola.one/partners/luogu-31f15bf47677c2aec75b905bbe6836a3.png" alt="洛谷" class="hola-partner-logo">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
+  <header class="hola-navbar hola-navbar-white hola-navbar-lightbg">
+    <div class="hola-container">
+      <nav class="hola-navbar-main">
+        <a href="/" class="hola-navbar-brand">¡Hola!</a>
+      </nav>
+      <nav class="hola-navbar-sub">
+        <a href="https://ihola.one">¡Hola! 官网</a>
+      </nav>
     </div>
+  </header>
+  <div class="hola-container hola-card-stack">
+    <div class="hola-card hola-card-with-image">
+      <div class="video-player">
+        <{if $records[0]["bilibili"]}>
+        <div videoplay id="videoplay-bilibili">
+          <iframe class="hola-image" src="https://www.bilibili.com/html/html5player.html?aid=<{$records[0]["bilibili"]}>&as_wide=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <{/if}>
+        <{if $records[0]["youtube"]}>
+        <div videoplay id="videoplay-youtube">
+          <iframe class="hola-image" src="https://www.youtube.com/embed/<{$records[0]["youtube"]}>" frameborder="0" allowfullscreen="">在某些网络环境下，您可能无法使用 YouTube 视频源。</iframe>
+        </div>
+        <{/if}>
+      </div>
+      <h1 class="hola-card-title"><span class="catg-<{$records[0]["cid"]}>"><{$catg[0]["title"]}></span><{$records[0]["title"]}></h1>
+      <div class="video-switcher">
+        <h5>视频源</h5>
+        <{if $records[0]["bilibili"]}>
+        <a href="#bilibili" id="videosrc-bilibili">哔哩哔哩</a>
+        <{/if}>
+        <{if $records[0]["youtube"]}>
+        <a href="#youtube" id="videosrc-youtube">YouTube</a>
+        <{/if}>
+      </div>
+    </div>
+    <div class="hola-card">
+      <p>本视频录制于 <a href="https://ihola.one/events/<{$events[0]["link"]}>.html"><{$events[0]["name"]}></a>，讲者 <{$users[0]["full_name"]}>。</p>
+      <p><{$records[0]["desc"]}></p>
+      <p>所有 <a href="https://ihola.one/events/<{$events[0]["link"]}>.html"><{$events[0]["name"]}></a> 活动视频均以 <a href="<{$protocol[0]["link"]}>"><{$protocol[0]["name"]}></a> 协议发布。请遵守协议，转载请注明出处，请勿用于商业用途。</p>
+    </div>
+  </div>
+  <script>
+    if (!location.hash) location.hash = '#bilibili'
+
+    window._prevId = location.hash.slice(1)
+
+    const handler = e => {
+      !e || e.preventDefault()
+      document.getElementById('videosrc-' + window._prevId).setAttribute('class', '')
+      document.getElementById('videosrc-' + location.hash.slice(1)).setAttribute('class', 'active')
+      document.getElementById('videoplay-' + window._prevId).setAttribute('class', '')
+      document.getElementById('videoplay-' + location.hash.slice(1)).setAttribute('class', 'active')
+      window._prevId = location.hash.slice(1)
+      return false
+    }
+
+    window.addEventListener('hashchange', handler)
+
+    handler()
+  </script>
